@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>World News — 24 November 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1024px; height: 1024px; overflow: hidden; }
+  body {
+    background: #f6f1e5;
+    color: #16233f;
+    font-family: "Noto Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { width: 1024px; height: 1024px; padding: 8px 28px 6px 28px; position: relative; }
+  /* light gufeng skin: rice-paper tint + faint fibre lines */
+  .page::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(120, 90, 40, 0.05), transparent 55%),
+      radial-gradient(ellipse at 85% 90%, rgba(120, 90, 40, 0.05), transparent 55%);
+  }
+  .serif { font-family: "Noto Serif", serif; }
+
+  /* masthead */
+  .masthead { display: flex; justify-content: space-between; align-items: baseline;
+    font-family: "Noto Serif", serif; font-weight: 700; letter-spacing: 2px; }
+  .mh-left { font-size: 13px; }
+  .mh-right { font-size: 12px; letter-spacing: 1.5px; color: #a93226; }
+  .rule-double { border-top: 2.5px solid #16233f; border-bottom: 1px solid #16233f; height: 4px; margin: 4px 0 2px 0; }
+
+  /* date */
+  .date { font-family: "Noto Serif", serif; font-weight: 900; font-size: 38px; line-height: 1.02;
+    letter-spacing: 0.5px; text-align: center; color: #16233f; }
+  .subline { text-align: center; font-size: 12px; letter-spacing: 3px; font-weight: 700; color: #a93226; margin: 1px 0 4px 0; }
+  .seal { display: inline-block; background: #a93226; color: #f6f1e5; font-family: "Noto Serif", serif;
+    font-size: 12px; line-height: 1; padding: 3px 4px; margin-left: 8px; vertical-align: 2px; border-radius: 2px; }
+
+  /* section labels */
+  .sec-label { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; color: #a93226; }
+  .rule-thin { border-top: 1px solid #16233f; margin: 5px 0; }
+
+  /* lead story */
+  .lead { border-top: 2px solid #16233f; border-bottom: 1px solid #16233f; padding: 4px 0 5px 0; }
+  .lead-kicker { display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; }
+  .lead-kicker .tag { color: #a93226; }
+  .lead h2 { font-family: "Noto Serif", serif; font-weight: 900; font-size: 26px; line-height: 1.05; margin: 2px 0 3px 0; }
+  .lead p { font-size: 12.5px; line-height: 1.32; }
+  .lead p b { color: #a93226; }
+
+  /* timeline */
+  /* timeline + numbers: label as left column to save a line each */
+  .timeline, .numbers { display: flex; gap: 12px; align-items: flex-start; padding: 3px 0 2px 0; }
+  .timeline { border-bottom: 1px solid #16233f; }
+  .numbers { border-bottom: 2px solid #16233f; }
+  .strip-label { width: 92px; min-width: 92px; font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px; color: #a93226; line-height: 1.3; padding-top: 2px; }
+  .tl-items { display: flex; justify-content: space-between; flex: 1; }
+  .tl-item { width: 15.5%; font-size: 10px; line-height: 1.25; }
+  .tl-item b { display: block; font-size: 12px; color: #a93226; font-family: "Noto Serif", serif; }
+  .num-items { display: flex; justify-content: space-between; flex: 1; }
+  .num-item { width: 15.5%; text-align: left; }
+  .num-item b { display: block; font-family: "Noto Serif", serif; font-weight: 900; font-size: 19px; line-height: 1; color: #a93226; }
+  .num-item span { font-size: 9px; line-height: 1.25; display: block; margin-top: 2px; }
+
+  /* main stories grid */
+  .main-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 18px; row-gap: 0; padding: 1px 0 2px 0; border-bottom: 2px solid #16233f; }
+  .story { display: flex; gap: 7px; padding: 1.5px 0 0.5px 0; border-bottom: 1px solid #d8cfba; align-items: flex-start; }
+  .s-num { font-family: "Noto Serif", serif; font-weight: 900; font-size: 15px; color: #a93226; line-height: 1.15; min-width: 18px; }
+  .s-icon { width: 30px; height: 30px; min-width: 30px; border: 1px solid #b8ad93; background: #efe8d6; padding: 3px; }
+  .s-icon svg { width: 100%; height: 100%; }
+  .s-body { flex: 1; }
+  .s-tag { font-size: 9px; font-weight: 700; letter-spacing: 0.6px; color: #5a5a5a; }
+  .s-tag .src { color: #a93226; }
+  .s-title { font-size: 12px; font-weight: 700; line-height: 1.2; margin: 1px 0; }
+  .s-sum { font-size: 10px; line-height: 1.25; color: #333333; }
+
+  /* also list */
+  .also { padding: 2px 0 1px 0; border-bottom: 2px solid #16233f; }
+  .also-head { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; color: #a93226; margin-bottom: 2px; }
+  .also-cols { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; }
+  .a-item { font-size: 10px; line-height: 1.15; padding: 1px 0; }
+  .a-item .a-num { font-family: "Noto Serif", serif; font-weight: 900; color: #a93226; }
+  .a-item .a-src { color: #7a6a55; font-size: 10px; }
+
+  /* bottom: map + date check */
+  .bottom { display: flex; gap: 18px; padding: 2px 0 1px 0; }
+  .map-block { width: 340px; min-width: 340px; }
+  .map-block svg { display: block; margin-top: 2px; }
+  .regions { font-size: 10.5px; font-weight: 700; letter-spacing: 0.5px; margin-top: 2px; }
+  .datecheck { flex: 1; border: 2px solid #a93226; padding: 4px 10px 4px 10px; background: rgba(169, 50, 38, 0.05); }
+  .dc-head { font-size: 12px; font-weight: 900; letter-spacing: 2.5px; color: #a93226; }
+  .dc-body { font-size: 10px; line-height: 1.32; margin-top: 2px; }
+  .dc-body b { color: #a93226; }
+  .dc-notyet { font-size: 10px; line-height: 1.32; margin-top: 3px; border-top: 1px dashed #a93226; padding-top: 3px; }
+  .dc-notyet b { color: #a93226; }
+
+  /* footer */
+  .legend { border-top: 1px solid #16233f; padding-top: 1px; font-size: 9.5px; line-height: 1.3; color: #444444; text-align: center; }
+  .legend b { color: #a93226; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="masthead"><span class="mh-left">%%MASTHEAD%%</span><span class="mh-right">%%SPEC%% <span class="seal">聞</span></span></div>
+  <div class="rule-double"></div>
+  <h1 class="date">%%DATE_LONG%%</h1>
+
+  <section class="lead">
+    <div class="lead-kicker"><span>#1 · %%LEAD_FIELD%% · %%LEAD_PLACE%%</span><span class="tag">%%LEAD_TAG%% · %%LEAD_SOURCE%% &nbsp;·&nbsp; %%LEAD_CLAIM%%</span></div>
+    <h2>%%LEAD_TITLE%%</h2>
+    <p>%%LEAD_SUMMARY%%</p>
+  </section>
+
+  <section class="timeline">
+    <div class="strip-label">THE DAY IN UTC</div>
+    <div class="tl-items">%%TIMELINE%%</div>
+  </section>
+
+  <section class="numbers">
+    <div class="strip-label">THE DAY IN NUMBERS</div>
+    <div class="num-items">%%NUMBERS%%</div>
+  </section>
+
+  <section class="main-grid">%%MAIN%%</section>
+
+  <section class="also">
+    <div class="also-head">ALSO ON TUESDAY 24 NOVEMBER</div>
+    <div class="also-cols">%%ALSO%%</div>
+  </section>
+
+  <div class="bottom">
+    <div class="map-block">
+      <div class="sec-label">WHERE IT HAPPENED</div>
+      %%MAP%%
+      <div class="regions">%%REGIONS%%</div>
+    </div>
+    <div class="datecheck">
+      <div class="dc-head">DATE CHECK</div>
+      <div class="dc-body"><b>Every story on this page happened or was first reported on Tuesday 24 November 2026 (UTC).</b> Left out because they happened on an earlier day: %%DATECHECK%%</div>
+      <div class="dc-notyet"><b>Not yet:</b> %%NOTYET%%</div>
+    </div>
+  </div>
+
+  <footer class="legend"><b>%%LEGEND%%</b><br>%%FOOTNOTE%%</footer>
+</div>
+</body>
+</html>

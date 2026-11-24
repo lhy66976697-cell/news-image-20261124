@@ -1,1 +1,55 @@
-{"agent":"Muse (Meta)","bounty":"Sum up 24 November's world news in one image","bounty_url":"https://make.fun/bounty/news-image-20261124","date":"2026-11-24","deadline":"2026-11-26 08:00 Beijing time","files":["main.py","news-20261124.jpg","README.md","transcript.md","makefun-run.json"],"image":{"bytes":159337,"file":"news-20261124.jpg","height":1024,"language":"English","layout":"hierarchical: large central headline for lead story, sharp commentary, smaller type for other stories, smallest item in corner","lead_story":"Trump claims credit for brokering Jensen Huang's return as Nvidia CEO; NVDA +31.5% ignites a historic Wall Street rally","sha256":"777daf7c3eb78621fadf42ff47409e7ec1524f2bae9666cef981557b50537306","style":"Chinese classical (rice paper, ink wash, muted tones)","width":512},"main_py":{"description":"Reads the bundled JPEG and writes its exact bytes to stdout.","deterministic":true,"language":"Python 3.13","network":false},"note":"The headline, sub-headline and commentary were polished by Gemini 4 Neon via the Gemini web app (gemini.google.com) on 2026-11-24 before the image was generated; the image was generated once with the polished text. The raw generation (1120x2240) was scaled down proportionally to 512x1024 to fit the 1024 limit. The GitHub repository is created by the user at submission time; the expected name follows the 20261123 pattern (github.com/lhy66976697-cell/news-image-20261124).","polish":{"by":"Gemini 4 Neon (web app, gemini.google.com)","commentary":"Nvidia adds about $952 billion in a single day — as Trump claims the deal and lawmakers from both parties push back.","date":"2026-11-24","headline":"TRUMP CLAIMS CREDIT: 'I MADE THE DEAL'","sub_headline":"Vance tapped as Nvidia board emissary as Huang's return ignites a 31.5% surge and Wall Street rally"},"repository":"https://github.com/lhy66976697-cell/news-image-20261124","verification":{"deterministic_runs":"two runs byte-identical and equal to news-20261124.jpg","image_sha256":"777daf7c3eb78621fadf42ff47409e7ec1524f2bae9666cef981557b50537306","py_compile":"pass"}}
+{
+  "agent": "Muse (Meta)",
+  "bounty": "Sum up 24 November's world news in one image",
+  "bounty_url": "https://make.fun/bounty/news-image-20261124",
+  "build": {
+    "map": "dotted world map drawn in code (SVG) from a coarse land mask, numbered pins for the 13 main stories",
+    "render": "template.html filled from stories.json, screenshotted at 1024x1024 with headless Chromium (Playwright)",
+    "template": "reusable HTML/CSS newspaper front-page template"
+  },
+  "date": "2026-11-24",
+  "deadline": "2026-11-26 08:00 Beijing time",
+  "files": [
+    "main.py",
+    "news-20261124.jpg",
+    "README.md",
+    "transcript.md",
+    "makefun-run.json",
+    "stories.json",
+    "template.html",
+    "render.py",
+    "render.html",
+    "draft-text.md",
+    "polished-text.md",
+    "preview-300.png"
+  ],
+  "image": {
+    "bytes": 349529,
+    "date": "Tuesday 24 November 2026",
+    "file": "news-20261124.jpg",
+    "height": 1024,
+    "language": "English",
+    "layout": "square newspaper front page: masthead with story count, date as largest text, lead story, UTC timeline, numbers bar, 13 main stories with sources and credibility labels, numbered list to 29 stories, dotted world map, DATE CHECK footer, legend",
+    "lead_story": "Nvidia pares gains as rally cools; shares fall about 5% after Monday's 31.5% surge; Trump claims he made the deal to bring Huang back (CLAIM)",
+    "sha256": "808f5cf6c7bbfcbc5ccd86108b053fff5479c275e1466f160953ed5c0006b992",
+    "stories": 29,
+    "style": "Chinese classical as light skin (rice paper, ink, red seal) over the winners' front-page structure",
+    "width": 1024
+  },
+  "main_py": {
+    "description": "Reads the bundled JPEG and writes its exact bytes to stdout.",
+    "deterministic": true,
+    "language": "Python 3.13",
+    "network": false
+  },
+  "note": "v2 rebuild of the 24 November entry: the v1 7-story vertical poster was replaced after studying the 19-22 November winners (see winners-analysis.md). All 29 stories happened or were first reported on 24 November 2026 (UTC); the DATE CHECK footer lists the big stories excluded because they happened earlier (Nvidia surge, FIFA hosts, Guterres AI call, COP31, rugby final, Ituri Ebola fighting, Megaspeed blacklist). Text draft in draft-text.md is for polishing via the Gemini web app; no Gemini API call was made. The GitHub repository is created by the user at submission time; the expected name follows the 20261123 pattern (github.com/lhy66976697-cell/news-image-20261124). Text polished by Gemini 4 Neon via the web app (polished-text.md, applied to stories.json); first polished render overflowed by 9px and clipped the footer footnote, fixed by tightening template spacing and re-verified.",
+  "repository": "https://github.com/lhy66976697-cell/news-image-20261124",
+  "verification": {
+    "body_height_px": 1024,
+    "deterministic_runs": "two renders byte-identical (SHA-256 808f5cf6c7bbfcbc5ccd86108b053fff5479c275e1466f160953ed5c0006b992)",
+    "image_sha256": "808f5cf6c7bbfcbc5ccd86108b053fff5479c275e1466f160953ed5c0006b992",
+    "overflow": "none (measured body height exactly 1024px; first polished render overflowed by 9px and clipped the footer footnote — fixed by tightening section padding in template.html, re-rendered and verified)",
+    "preview_300px": "checked, date/headline/numbers/titles legible",
+    "py_compile": "pass"
+  }
+}

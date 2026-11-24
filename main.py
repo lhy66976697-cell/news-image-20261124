@@ -1,4 +1,4 @@
-"""Output the 24 November 2026 world-news summary image.
+"""Output the 24 November 2026 world-news summary image (v2).
 
 Deterministic: reads the bundled JPEG and writes its exact bytes to stdout.
 No network access, no randomness, no time dependence.
