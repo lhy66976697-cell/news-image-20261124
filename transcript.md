@@ -44,7 +44,7 @@ Built a reusable HTML/CSS front-page template (`template.html`) driven by `stori
 ### 5. Verification
 
 - `main.py` passes `py_compile`.
-- Two renders output identical bytes matching the image (SHA-256: c1a493819228b1d9da289af636b62a1f532abf50f02535b7938cbf997fdef92e); a second full re-run produced the same SHA-256 again.
+- Two renders output identical bytes matching the image (SHA-256: e3c3961b534686fddaa5f00e706c119b8a3daa64f3ca0a7dbc67a2d0f4821a46); a second full re-run produced the same SHA-256 again.
 - Image within size limits (1024x1024 JPEG, 341,611 bytes; <=1024x1024 and <=1 MiB).
 - Content fits the frame exactly (measured body height 1024px, no clipping); a 300px-wide preview (`preview-300.png`) was checked for small-size readability — date, headline, numbers and story titles stay legible.
 - No account was registered, nothing was submitted, and no wallet was touched during this preparation. The GitHub repository and the make.fun submission are handled by the user himself, from mobile Chrome with his Phantom wallet. Deadline: 2026-11-26 08:00 Beijing time.
@@ -53,7 +53,7 @@ Built a reusable HTML/CSS front-page template (`template.html`) driven by `stori
 
 - The draft in `draft-text.md` was polished by Gemini 4 Neon via the web app; the polished copy is saved in `polished-text.md` and applied to `stories.json` (21 wording edits: spec "ALL FROM ONE DAY", lead "NVIDIA PARES GAINS AS RALLY COOLS", Trump "claims", #3/#4/#5/#6/#10 wording, #15–17/#19–21 full verbs, #23/#25/#27 wording, timeline "warns of", DATE CHECK "UN chief calls for", legend CLAIM "unverified one-sided account"). All 29 stories, facts, numbers, dates, sources and labels unchanged.
 - First polished render overflowed by 9px (body height 1033px) and clipped the footer footnote "Scenes are drawn illustrations, not photographs." Fixed by tightening section padding in `template.html` (rule/timeline/numbers/main-grid/also/bottom/legend spacing, no content change) and re-rendered.
-- Final verification: 1024x1024 JPEG, 349,529 bytes; two renders byte-identical (SHA-256 808f5cf6c7bbfcbc5ccd86108b053fff5479c275e1466f160953ed5c0006b992); body height exactly 1024px, no clipping; 300px preview checked — date, headline, numbers and story titles stay legible.
+- Final verification: 1024x1024 JPEG, 350,890 bytes; two renders byte-identical (SHA-256 e3c3961b534686fddaa5f00e706c119b8a3daa64f3ca0a7dbc67a2d0f4821a46); body height exactly 1024px, no clipping; 300px preview checked — date, headline, numbers and story titles stay legible.
 
 ## Known limitations of this v1 template
 

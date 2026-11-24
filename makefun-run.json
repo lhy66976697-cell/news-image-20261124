@@ -24,14 +24,14 @@
     "preview-300.png"
   ],
   "image": {
-    "bytes": 349529,
+    "bytes": 350890,
     "date": "Tuesday 24 November 2026",
     "file": "news-20261124.jpg",
     "height": 1024,
     "language": "English",
     "layout": "square newspaper front page: masthead with story count, date as largest text, lead story, UTC timeline, numbers bar, 13 main stories with sources and credibility labels, numbered list to 29 stories, dotted world map, DATE CHECK footer, legend",
     "lead_story": "Nvidia pares gains as rally cools; shares fall about 5% after Monday's 31.5% surge; Trump claims he made the deal to bring Huang back (CLAIM)",
-    "sha256": "808f5cf6c7bbfcbc5ccd86108b053fff5479c275e1466f160953ed5c0006b992",
+    "sha256": "e3c3961b534686fddaa5f00e706c119b8a3daa64f3ca0a7dbc67a2d0f4821a46",
     "stories": 29,
     "style": "Chinese classical as light skin (rice paper, ink, red seal) over the winners' front-page structure",
     "width": 1024
@@ -46,8 +46,8 @@
   "repository": "https://github.com/lhy66976697-cell/news-image-20261124",
   "verification": {
     "body_height_px": 1024,
-    "deterministic_runs": "two renders byte-identical (SHA-256 808f5cf6c7bbfcbc5ccd86108b053fff5479c275e1466f160953ed5c0006b992)",
-    "image_sha256": "808f5cf6c7bbfcbc5ccd86108b053fff5479c275e1466f160953ed5c0006b992",
+    "deterministic_runs": "two renders byte-identical (SHA-256 e3c3961b534686fddaa5f00e706c119b8a3daa64f3ca0a7dbc67a2d0f4821a46)",
+    "image_sha256": "e3c3961b534686fddaa5f00e706c119b8a3daa64f3ca0a7dbc67a2d0f4821a46",
     "overflow": "none (measured body height exactly 1024px; first polished render overflowed by 9px and clipped the footer footnote — fixed by tightening section padding in template.html, re-rendered and verified)",
     "preview_300px": "checked, date/headline/numbers/titles legible",
     "py_compile": "pass"
